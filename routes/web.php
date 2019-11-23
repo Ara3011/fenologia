@@ -12,15 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Template.template');
 });
-
 Route::get('/template', function () {
-    return view('template');
+    return view('Template.template');
 });
 Route::get('/formulario', function () {
-    return view('formulario');
+    return view('Formulario.formulario');
 });
 Route::get('/resultados', function () {
-    return view('resultados');
+    return view('Resultados.resultados');
 });
+Route::get('/administradores', function () {
+    return view('Administradores.index');
+});
+Route::get('/frutales', function () {
+    return view('Frutales.index');
+});
+

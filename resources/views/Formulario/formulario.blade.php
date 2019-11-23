@@ -1,27 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" href="css/estilosred.css">
-</head>
-<body>
-<header class="header2">
-    <div class="wrapper">
-        <div class="logo">
-            <img src="imagenes/logo.jpg" width="280" height="120" alt="">
-        </div>
-        <nav>
-            <a href="{{url('/template')}}">Home</a>
-            <a href="{{url('/formulario')}}">Formulario</a>
-            <a href="{{url('/resultados')}}">Resultados</a>
-        </nav>
-    </div>
-</header>
-<section class="contenido wrapper">
+@extends('Template.template')
+@section('content')
+<section class="container wrapper">
     <h2 class="text-center">Monitoreo Fenológico Comunitario</h2>
     <p class="text-center">Cuando hablamos de vegetación es importante pensar en la diversidad de plantas que existen en una zona determinada, esta está determinada por factores ecológicos, fisiográficos (orografía) y del clima. Actualmente el clima es un factor determinante en la distribución y composición de la vegetación en una zona. El propósito de este formato es ayudarnos a visualizar e identificar los principales elementos de cambio en la vegetación originado por el clima así como registrar el comportamiento de la vegetación frente al cambio climático</p>
 
@@ -230,5 +209,4 @@
 
 </section>
 
-</body>
-</html>
+@endsection
