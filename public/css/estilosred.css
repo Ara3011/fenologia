@@ -1,0 +1,88 @@
+*{margin:0;padding:0;}
+
+body
+{
+    background:#ffffff;
+}
+header
+{
+    width: 100%;
+    overflow: hidden;  /*El contenido es recortado y no se muestran barras de posición*/
+    background: #ffffff; /*Cambiar color al header*/
+    margin-bottom: 20px; /*espacio despues del header*/
+     border-bottom: 1px solid #C00;
+}
+.wrapper
+{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+
+
+}
+header .logo
+{
+    color: #ffffff;
+    font-size: 50px;
+    line-height: 190px;  /*header abarca 200px*/
+    float: left;
+}
+nav
+{
+    float: left; /*alinear texto de nav a la derecha*/
+    line-height: 190px; 
+}
+header nav
+
+
+{
+    float: right;
+    line-height: 190px;
+    transform:translate(-210px); /*permite acomodar cuadro o texto en x y y*/
+}
+header nav a
+{
+    display:inline-block;
+    color:black;
+    text-decoration: none;
+    padding: 10px 20px;
+
+    line-height: normal;
+    font-size: 20px;
+    font-weight: bold;
+
+    -webkit-transition: all;
+    -o-transition: all;
+    transition: all;
+    
+
+}
+header nav a:hover
+{
+background: #e66432;
+}
+
+.header2
+{
+    position: fixed;
+    height: 100px;
+}
+.header2 .logo
+{
+    line-height: 100px;
+    font-size: 30px;
+}
+
+.header2 nav
+{
+    line-height: 100px;
+}
+.contenido
+{
+    padding-top: 100px;
+}
+.contenido p
+{
+    margin-bottom: 1em;
+}
