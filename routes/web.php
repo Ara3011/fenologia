@@ -29,4 +29,7 @@ Route::get('/administradores', function () {
 Route::get('/frutales', function () {
     return view('Frutales.index');
 });
+Route::get('/tipos', function () {
+    return view('Tipos.index');
+});
 

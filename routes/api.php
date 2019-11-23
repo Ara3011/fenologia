@@ -16,4 +16,5 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::resource("frutales","FrutalesController",["except"=>["create","edit","show"]]);
+Route::resource("frutal","FrutalesController",["except"=>["create","edit","show"]]);
+Route::resource("tipos","TiposController",["except"=>["create","edit","show"]]);

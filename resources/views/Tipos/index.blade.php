@@ -21,8 +21,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="fruta in frutales">
-                            <td>@{{ fruta.descripcion }}</td>
+                        <tr v-for="tipo in tipos">
+                            <td>@{{ tipo.descripcion }}</td>
                             <td width="10px">
                                 <button type="button" class="btn btn-warning btn-sm">Editar</button>
                             </td>
@@ -32,7 +32,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    @include('Frutales.partials.create');
+                    @include('Frutales.partials.create')
 
                 </div>
             </div>
@@ -49,8 +49,8 @@
                 this.getFrutales();
             },
             data: {
-                api: "{{url("api/frutal")}}",
-                frutales: [],
+                api: "{{url("api/tipos")}}",
+                tipos: [],
                 descripcion: "",
 
 
@@ -59,7 +59,7 @@
             methods: {
                 getFrutales: function () {
                     axios.get(this.api).then(response => {
-                        this.frutales = response.data;
+                        this.tipos = response.data;
                     });
 
                 },

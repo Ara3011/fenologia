@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Frutales;
+use App\Tipos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Response;
 
-class FrutalesController extends Controller
+class TiposController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +17,9 @@ class FrutalesController extends Controller
      */
     public function index()
     {
-
-        $frutales = Frutales::select("frutales.*")
+        $tipos = Tipos::select("tipos.*")
             ->get();
-            return $frutales;
-
+        return $tipos;
     }
 
     /**
@@ -50,17 +47,17 @@ class FrutalesController extends Controller
             ]);
         if ($validators->fails())
             return response()->json($validators->messages(), 200);
-        $frutal=Frutales::create($request->all());
-        return $frutal;
+        $tipo=Tipos::create($request->all());
+        return $tipo;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Frutales  $frutales
+     * @param  \App\Tipos  $tipos
      * @return \Illuminate\Http\Response
      */
-    public function show(Frutales $frutales)
+    public function show(Tipos $tipos)
     {
         //
     }
@@ -68,10 +65,10 @@ class FrutalesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Frutales  $frutales
+     * @param  \App\Tipos  $tipos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Frutales $frutales)
+    public function edit(Tipos $tipos)
     {
         //
     }
@@ -80,10 +77,10 @@ class FrutalesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Frutales  $frutales
+     * @param  \App\Tipos  $tipos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Frutales $frutal)
+    public function update(Request $request, Tipos $tipo)
     {
         $validators = Validator::make($request->all(),
             [
@@ -92,20 +89,19 @@ class FrutalesController extends Controller
             ]);
         if ($validators->fails())
             return response()->json($validators->messages(), 200);
-        $frutal->update($request->all());
-        return $frutal;
+        $tipo->update($request->all());
+        return $tipo;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Frutales  $frutales
+     * @param  \App\Tipos  $tipos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Frutales $frutal)
+    public function destroy(Tipos $tipo)
     {
-        //
-        $frutal->delete();
+        $tipo->delete();
         return response()->json(["message" => "Eliminado correctatemente"], 200);
     }
 }

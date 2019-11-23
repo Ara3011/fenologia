@@ -5,19 +5,18 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Frutales extends Model
+class Tipos extends Model
 {
     use SoftDeletes;
 
 
     protected $fillable = [
-         'descripcion',
+        'descripcion',
     ];
-    protected $primaryKey = 'id_frutal';
+    protected $primaryKey = 'id_tipo';
 
     public function getResponses()//Obtener
     {
         return $this->hasMany(Response::class);
     }
 }
-
