@@ -32,7 +32,6 @@
                         </tr>
                         </tbody>
                     </table>
-                    @include('Frutales.partials.create')
                 </div>
             </div>
         </div>
