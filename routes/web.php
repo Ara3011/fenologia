@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('Template.template');
 });
+Route::get('/coniferas', function () {
+    return view('Coniferas.index');
+});
 Route::get('/template', function () {
     return view('Template.template');
 });
@@ -32,4 +35,15 @@ Route::get('/frutales', function () {
 Route::get('/tipos', function () {
     return view('Tipos.index');
 });
-
+Route::get('/eventosextremos', function () {
+    return view('EventosExtremos.index');
+});
+Route::get('/cultivos', function () {
+    return view('Cultivos.index');
+});
+Route::get('/hojasanchas', function () {
+    return view('HojasAnchas.index');
+});
+Route::get('/estados', function () {
+    return view('Estados.index');
+});

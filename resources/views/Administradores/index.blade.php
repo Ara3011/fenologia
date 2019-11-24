@@ -9,23 +9,23 @@
             <a class="nav-link" href="{{url('/tipos')}}">Tipos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Eventos Extremos</a>
+            <a class="nav-link" href="{{url('/eventosextremos')}}">Eventos Extremos</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">Cultivos</a>
+            <a class="nav-link" href="{{url('/cultivos')}}">Cultivos</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">Forestales Coniferas</a>
+            <a class="nav-link" href="{{url('/coniferas')}}">Forestales Coniferas</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">Forestales Hojas Anchas</a>
+            <a class="nav-link" href="{{url('/hojasanchas')}}">Forestales Hojas Anchas</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">Estados</a>
+            <a class="nav-link" href="{{url('/estados')}}">Estados</a>
         </li>
     </ul>
    </div>

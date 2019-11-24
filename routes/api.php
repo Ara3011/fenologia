@@ -18,3 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::resource("frutal","FrutalesController",["except"=>["create","edit","show"]]);
 Route::resource("tipos","TiposController",["except"=>["create","edit","show"]]);
+Route::resource("eventosextremos","EventosExtremosController",["except"=>["create","edit","show"]]);
+Route::resource("cultivos","CultivosController",["except"=>["create","edit","show"]]);
+Route::resource("coniferas","ConiferasController",["except"=>["create","edit","show"]]);
+Route::resource("hojasanchas","HojasAnchasController",["except"=>["create","edit","show"]]);
+Route::resource("estados","EstadosController",["except"=>["create","edit","show"]]);
+

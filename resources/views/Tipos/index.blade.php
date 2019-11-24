@@ -1,9 +1,9 @@
 @extends('Administradores.index')
 @section('content')
 
-    <div id="frutales" class="row">
+    <div id="tipos" class="row">
         <div class="col-12">
-            <h1 class="page-header">Árboles Frutales</h1>
+            <h1 class="page-header">Tipos</h1>
         </div>
         <div class="row">
             <div class="col-12">
@@ -32,8 +32,6 @@
                         </tr>
                         </tbody>
                     </table>
-                    @include('Frutales.partials.create')
-
                 </div>
             </div>
         </div>
@@ -44,9 +42,9 @@
     <script>
 
         new Vue({
-            el: "#frutales",
+            el: "#tipos",
             created: function () {
-                this.getFrutales();
+                this.getTipos();
             },
             data: {
                 api: "{{url("api/tipos")}}",
@@ -57,13 +55,13 @@
             },
 
             methods: {
-                getFrutales: function () {
+                getTipos: function () {
                     axios.get(this.api).then(response => {
                         this.tipos = response.data;
                     });
 
                 },
-                createFrutales: function () {
+                createTipos: function () {
 
                     axios.post(this.api, {
                         descripcion: this.descripcion,
@@ -76,3 +74,5 @@
 
     </script>
 @endsection
+
+

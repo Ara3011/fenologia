@@ -1,9 +1,9 @@
 @extends('Administradores.index')
 @section('content')
 
-    <div id="frutales" class="row">
+    <div id="eventos_extremos" class="row">
         <div class="col-12">
-            <h1 class="page-header">Árboles Frutales</h1>
+            <h1 class="page-header">Eventos Extremos</h1>
         </div>
         <div class="row">
             <div class="col-12">
@@ -21,8 +21,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="fruta in frutales">
-                            <td>@{{ fruta.descripcion }}</td>
+                        <tr v-for="evento in eventos_extremos">
+                            <td>@{{ evento.descripcion }}</td>
                             <td width="10px">
                                 <button type="button" class="btn btn-warning btn-sm">Editar</button>
                             </td>
@@ -32,7 +32,8 @@
                         </tr>
                         </tbody>
                     </table>
-                    @include('Frutales.partials.create')
+
+
                 </div>
             </div>
         </div>
@@ -41,23 +42,24 @@
 @endsection
 @section("scripts")
     <script>
+
         new Vue({
-            el: "#frutales",
+            el: "#eventos_extremos",
             created: function () {
-                this.getFrutales();
+                this.getEventosExtremos();
             },
             data: {
-                api: "{{url("api/frutal")}}",
-                frutales: [],
+                api: "{{url("api/eventosextremos")}}",
+                eventos_extremos: [],
                 descripcion: "",
 
 
             },
 
             methods: {
-                getFrutales: function () {
+                getEventosExtremos: function () {
                     axios.get(this.api).then(response => {
-                        this.frutales = response.data;
+                        this.eventos_extremos = response.data;
                     });
 
                 },

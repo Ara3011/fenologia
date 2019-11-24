@@ -1,9 +1,9 @@
 @extends('Administradores.index')
 @section('content')
 
-    <div id="frutales" class="row">
+    <div id="estados" class="row">
         <div class="col-12">
-            <h1 class="page-header">Árboles Frutales</h1>
+            <h1 class="page-header">Estados</h1>
         </div>
         <div class="row">
             <div class="col-12">
@@ -21,8 +21,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="fruta in frutales">
-                            <td>@{{ fruta.descripcion }}</td>
+                        <tr v-for="estado in estados">
+                            <td>@{{ estado.descripcion }}</td>
                             <td width="10px">
                                 <button type="button" class="btn btn-warning btn-sm">Editar</button>
                             </td>
@@ -32,7 +32,6 @@
                         </tr>
                         </tbody>
                     </table>
-                    @include('Frutales.partials.create')
                 </div>
             </div>
         </div>
@@ -41,32 +40,33 @@
 @endsection
 @section("scripts")
     <script>
+
         new Vue({
-            el: "#frutales",
+            el: "#estados",
             created: function () {
-                this.getFrutales();
+                this.getEstados();
             },
             data: {
-                api: "{{url("api/frutal")}}",
-                frutales: [],
+                api: "{{url("api/estados")}}",
+                estados: [],
                 descripcion: "",
 
 
             },
 
             methods: {
-                getFrutales: function () {
+                getEstados: function () {
                     axios.get(this.api).then(response => {
-                        this.frutales = response.data;
+                        this.estados = response.data;
                     });
 
                 },
-                createFrutales: function () {
+                createEstados: function () {
 
                     axios.post(this.api, {
                         descripcion: this.descripcion,
                     }).then(response => {
-                        this.getPosts();
+                        this.getEstados();
                     });
                 },
             }
@@ -74,3 +74,4 @@
 
     </script>
 @endsection
+
