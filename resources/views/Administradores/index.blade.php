@@ -1,6 +1,6 @@
 @extends('Template.template')
 @section('content')
-   <div>
+   <div class="contenedor card card-group">
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link" href="{{url('/frutales')}}">Arboles Frutales</a>
@@ -29,6 +29,15 @@
         </li>
     </ul>
    </div>
+   <style>
+       li
+       {
+           padding: 10px 10px;
+           transform:translate(120px);
+
+       }
+
+   </style>
         <section class="container">
             @yield("content")
         </section>

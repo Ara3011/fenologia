@@ -3,10 +3,10 @@
 
     <div id="estados" class="row">
         <div class="col-12">
-            <h1 class="page-header">Estados</h1>
+            <h1 class="page-header text-center card-header">Estados</h1>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div class="tablita col-12 pt-5 card-body">
                 <div class="col-7">
                     <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Agregar">
                         Agregar
@@ -36,6 +36,12 @@
             </div>
         </div>
     </div>
+    <style>
+        .tablita
+        {
+            transform:translate(540px);
+        }
+    </style>
 
 @endsection
 @section("scripts")

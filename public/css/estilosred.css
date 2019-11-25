@@ -19,7 +19,6 @@ header
     margin: auto;
     overflow: hidden;
 
-
 }
 header .logo
 {
@@ -31,15 +30,14 @@ header .logo
 nav
 {
     float: left; /*alinear texto de nav a la derecha*/
-    line-height: 190px; 
+    line-height: 100px;
 }
 header nav
 
-
 {
     float: right;
-    line-height: 190px;
-    transform:translate(-210px); /*permite acomodar cuadro o texto en x y y*/
+    line-height: 200px;
+    transform:translate(-100px); /*permite acomodar cuadro o texto en x y y*/
 }
 header nav a
 {
@@ -55,7 +53,6 @@ header nav a
     -webkit-transition: all;
     -o-transition: all;
     transition: all;
-    
 
 }
 header nav a:hover
@@ -86,3 +83,4 @@ background: #e66432;
 {
     margin-bottom: 1em;
 }
+
