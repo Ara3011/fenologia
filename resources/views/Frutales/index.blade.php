@@ -8,7 +8,7 @@
         <div class="row">
             <div class="tablita col-12 pt-5 card-body">
                 <div class="col-7">
-                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#Agregar">
+                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#agregarfrutal">
                         Agregar
                     </button>
                     <table class="table table-hover table">
@@ -24,23 +24,31 @@
                         <tr v-for="fruta in frutales">
                             <td>@{{ fruta.descripcion }}</td>
                             <td width="10px">
-                                <button type="button" class="btn btn-warning btn-sm">Editar</button>
+                                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal"
+                                        data-target="#actualizararbol"
+                                        @click="editFrutal(fruta)">Editar
+                                </button>
                             </td>
                             <td width="10px">
-                                <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                        data-target="#Delete" @click="idFrutal=fruta.id_frutal">Eliminar
+                                </button>
                             </td>
                         </tr>
                         </tbody>
                     </table>
+
                 </div>
             </div>
         </div>
+        @include('Frutales.partials.create')
+        @include('Frutales.partials.update')
+        @include('Frutales.partials.delete')
     </div>
     <style>
-        .tablita
-    {
-    transform:translate(540px);
-    }
+        .tablita {
+            transform: translate(540px);
+        }
     </style>
 
 @endsection
@@ -55,6 +63,8 @@
                 api: "{{url("api/frutal")}}",
                 frutales: [],
                 descripcion: "",
+                editardescripcion: "",
+                idFrutal: null,
 
 
             },
@@ -71,7 +81,21 @@
                     axios.post(this.api, {
                         descripcion: this.descripcion,
                     }).then(response => {
-                        this.getPosts();
+                        this.getFrutales();
+                    });
+                },
+                deleteFrutal: function () {
+                    axios.delete(this.api + "/" + this.idFrutal).then(response => {
+                        this.getFrutales();
+                    });
+                },
+                editFrutal: function (fruta) {
+                    this.editardescripcion = fruta.descripcion;
+                    this.idFrutal = fruta.id_frutal;
+                },
+                updateFrutal: function () {
+                    axios.put(this.api + "/" + this.idFrutal, {descripcion: this.editardescripcion}).then(response => {
+                        this.getFrutales();
                     });
                 },
             }
