@@ -45,11 +45,6 @@
         @include('Frutales.partials.update')
         @include('Frutales.partials.delete')
     </div>
-    <style>
-        .tablita {
-            transform: translate(540px);
-        }
-    </style>
 
 @endsection
 @section("scripts")
@@ -65,7 +60,6 @@
                 descripcion: "",
                 editardescripcion: "",
                 idFrutal: null,
-
 
             },
 

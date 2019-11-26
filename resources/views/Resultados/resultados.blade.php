@@ -1,4 +1,4 @@
-@extends('Template.template')
+@extends('layouts.app')
 @section('content')
 <section class="contenido wrapper">
 

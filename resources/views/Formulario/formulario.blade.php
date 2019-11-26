@@ -1,4 +1,4 @@
-@extends('Template.template')
+@extends('layouts.app')
 @section('content')
 <section class="container wrapper">
     <h2 class="text-center">Monitoreo Fenológico Comunitario</h2>

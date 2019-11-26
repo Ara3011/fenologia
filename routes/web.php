@@ -10,16 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
-    return view('Template.template');
+    return view('layouts.app');
 });
 Route::get('/coniferas', function () {
     return view('Coniferas.index');
 });
-Route::get('/template', function () {
-    return view('Template.template');
-});
+
 Route::get('/formulario', function () {
     return view('Formulario.formulario');
 });
@@ -47,3 +48,5 @@ Route::get('/hojasanchas', function () {
 Route::get('/estados', function () {
     return view('Estados.index');
 });
+
+
