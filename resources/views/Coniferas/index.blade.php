@@ -1,4 +1,4 @@
-@extends('Administradores.index')
+@extends('layouts.app')
 @section('content')
 
     <div id="coniferas" class="row">
@@ -47,7 +47,6 @@
 @endsection
 @section("scripts")
     <script>
-
         new Vue({
             el: "#coniferas",
             created: function () {
@@ -76,6 +75,5 @@
                 },
             }
         });
-
     </script>
 @endsection
