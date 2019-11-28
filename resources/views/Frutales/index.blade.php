@@ -2,12 +2,15 @@
 @section('content')
 
     <div id="frutales" class="row">
+        <div class="clo-md-2">
+            <button class="btn btn-success btn-round" data-toggle="modal" data-target="#agregarfrutal">
+                <i class="material-icons">loupe</i>Agregar
+            </button>
+        </div>
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-warning">
-                        <button class="btn btn-success btn-round" data-toggle="modal" data-target="#agregarfrutal">
-                            <i class="material-icons">undo</i> Agregar
-                        </button>
+                    <div class="card-header card-header-success">
+
                         <h4 class="card-title">Árboles Frutales</h4>
                     </div>
                     <div class="card-body">
@@ -32,7 +35,7 @@
                                     </button>
                                     <button type="button" rel="tooltip" class="btn btn-danger btn-round">
                                         <i class="material-icons" data-toggle="modal" data-target="#Delete"
-                                           @click="idFrutal=fruta.id_frutal">close</i>
+                                           @click="idFrutal=fruta.id_frutal">restore_from_trash</i>
                                     </button>
                                 </td>
                             </tr>
@@ -41,7 +44,6 @@
                         </table>
                     </div>
                 </div>
-
 
             @include('Frutales.partials.create')
             @include('Frutales.partials.update')

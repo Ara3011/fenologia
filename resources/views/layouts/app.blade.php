@@ -19,16 +19,16 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/material-kit.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('font-awesome/css/font-awesome.min.css')}}">
 </head>
 <body>
     <div >
-        <nav class="navbar navbar-expand-lg bg-dark">
+        <nav class="navbar navbar-expand-lg bg-warning">
             <div class="container">
-                <a href="{{url('/')}}">Home</a>
-                <a href="{{url('/formulario')}}">Formulario</a>
-                <a href="{{url('/resultados')}}">Resultados</a>
+                <a class="navbar-brand" href="{{url('/')}}">Home</a>
+                <a class="navbar-brand" href="{{url('/formulario')}}">Formulario</a>
+                <a class="navbar-brand" href="{{url('/resultados')}}">Resultados</a>
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
