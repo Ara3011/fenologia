@@ -44,7 +44,7 @@
                         </table>
                     </div>
                 </div>
-
+            </div>
             @include('Frutales.partials.create')
             @include('Frutales.partials.update')
             @include('Frutales.partials.delete')

@@ -12,7 +12,7 @@
                 <input type="text" v-model="descripcion">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-success" data-dismiss="modal" @click="createFrutales">Aceptar</button>
             </div>
         </div>
