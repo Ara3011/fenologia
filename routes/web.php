@@ -12,41 +12,45 @@
 */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/', function () {
     return view('layouts.app');
-});
-Route::get('/coniferas', function () {
-    return view('Coniferas.index');
 });
 
 Route::get('/formulario', function () {
     return view('Formulario.formulario');
 });
-Route::get('/resultados', function () {
-    return view('Resultados.resultados');
-});
-Route::get('/administradores', function () {
-    return view('Administradores.index');
-});
-Route::get('/frutales', function () {
-    return view('Frutales.index');
-});
-Route::get('/tipos', function () {
-    return view('Tipos.index');
-});
-Route::get('/eventosextremos', function () {
-    return view('EventosExtremos.index');
-});
-Route::get('/cultivos', function () {
-    return view('Cultivos.index');
-});
-Route::get('/hojasanchas', function () {
-    return view('HojasAnchas.index');
-});
-Route::get('/estados', function () {
-    return view('Estados.index');
-});
+
+Route::group(['middleware'=>['auth']],function (){
+
+    Route::get('/home', 'HomeController@index')->name('home');
 
 
+    Route::get('/coniferas', function () {
+        return view('Coniferas.index');
+    });
+
+    Route::get('/resultados', function () {
+        return view('Resultados.resultados');
+    });
+    Route::get('/administradores', function () {
+        return view('Administradores.index');
+    });
+    Route::get('/frutales', function () {
+        return view('Frutales.index');
+    });
+    Route::get('/tipos', function () {
+        return view('Tipos.index');
+    });
+    Route::get('/eventosextremos', function () {
+        return view('EventosExtremos.index');
+    });
+    Route::get('/cultivos', function () {
+        return view('Cultivos.index');
+    });
+    Route::get('/hojasanchas', function () {
+        return view('HojasAnchas.index');
+    });
+    Route::get('/estados', function () {
+        return view('Estados.index');
+    });
+});
