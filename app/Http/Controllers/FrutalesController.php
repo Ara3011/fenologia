@@ -11,11 +11,7 @@ use App\Http\Controllers\Response;
 
 class FrutalesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
 
@@ -25,22 +21,12 @@ class FrutalesController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $validators = Validator::make($request->all(),
@@ -54,35 +40,18 @@ class FrutalesController extends Controller
         return $frutal;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Frutales  $frutales
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Frutales $frutales)
     {
-        //
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Frutales  $frutales
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Frutales $frutales)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Frutales  $frutales
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Frutales $frutal)
     {
         $validators = Validator::make($request->all(),
@@ -96,15 +65,9 @@ class FrutalesController extends Controller
         return $frutal;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Frutales  $frutales
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Frutales $frutal)
     {
-        //
         $frutal->delete();
         return response()->json(["message" => "Eliminado correctatemente"], 200);
     }
