@@ -29,7 +29,9 @@ Route::group(['middleware'=>['auth']],function (){
         return view('Coniferas.index');
     });
 
-    Route::get('/resultados', 'GraficasController@userInfo')->name('graficas');
+    Route::get('/resultados', 'GraficasController@especiesInfo')->name('graficas');
+
+
 
     Route::get('/administradores', function () {
         return view('Administradores.index');

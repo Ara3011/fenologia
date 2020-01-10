@@ -29,8 +29,9 @@
         @yield('content')
     </main>
 </div>
-<script src="{{ asset('js/app.js') }}">
-   $(document).on('show.bs.modal', '.modal', function () {
+<script src="{{ asset('js/app.js') }}"></script>
+
+   {{--$(document).on('show.bs.modal', '.modal', function () {
         var zIndex = 1040 + (10 * $('.modal:visible').length);
         $(this).css('z-index', zIndex);
         setTimeout(function () {
@@ -39,7 +40,8 @@
     }).on('hidden.bs.modal', '.modal', function () {
         $('.modal:visible').length && $(document.body).addClass('modal-open');
     });
-</script>
+--}}
+
 @yield("scripts")
 </body>
 </html>

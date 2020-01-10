@@ -17,7 +17,9 @@ class SemanalesController extends Controller
      */
     public function index()
     {
-        //
+        $semanales = Semanales::select("registros_semanales.*")
+            ->get();
+        return $semanales;
     }
 
     /**
@@ -27,7 +29,7 @@ class SemanalesController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -57,9 +59,8 @@ class SemanalesController extends Controller
         if ($validators->fails())
             return response()->json($validators->messages(), 200);
         $semanal = Semanales::create($request->all());
-
-
         return $semanal;
+
     }
 
     /**

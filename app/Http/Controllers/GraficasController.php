@@ -8,18 +8,25 @@ use Illuminate\Http\Request;
 
 class GraficasController extends Controller
 {
-    public function userInfo()
+    public function especiesInfo()
     {
-        $semanales =Semanales::all();
-        $semanales ->map(static function ($semanal) {
-            $semanal= Semanales::whereIdRegistrosem($semanal->nombre_especie)->count();
 
-            return $semanal;
-        });
+
+
+        $semanales=Semanales::groupBy("nombre_especie")
+            ->havingRaw("count(1)")//Raw sirve para enviar lo escrito textualemente
+            ->select("nombre_especie")
+            ->selectRaw("count(1) as numero")
+            ->get();
 
 
         $chart = new EspecieChart();
-        $chart->labels($semanales->pluck('nombre_especie'));
+
+        $chart->labels($semanales->pluck("nombre_especie"));
+        $chart->dataset('Especie','bar',$semanales->pluck('numero'));
+
+
+
 
         return view('resultados.resultados', compact('chart'));
     }
