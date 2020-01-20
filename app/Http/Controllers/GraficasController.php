@@ -23,7 +23,7 @@ class GraficasController extends Controller
         $chart = new EspecieChart();
 
         $chart->labels($semanales->pluck("nombre_especie"));
-        $chart->dataset('Especie','bar',$semanales->pluck('numero'));
+        $chart->dataset('Especie','pie',$semanales->pluck('numero'));
 
 
 

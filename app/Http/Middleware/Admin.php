@@ -15,11 +15,11 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-       dd("hola");
-        /*dd($request->user);
-        if(Auth::user()->id==$request->user->id)*/
+
+
+        if(Auth::user()->id==$request->user->id)
             return $next($request);
-        //return response()->json(["status"=>"Error"],500);
+        return response()->json(["status"=>"Error"],500);
 
     }
 }
